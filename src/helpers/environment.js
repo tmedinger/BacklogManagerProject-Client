@@ -5,7 +5,7 @@ switch (window.location.hostname) {
         APIURL = "http://localhost:3000";
         break;
     case "tdm-vgbacklogmanagerclient.herokuapp.com":
-        APIURL = "https://tdm-vgbacklogmanagerclient.herokuapp.com"
+        APIURL = "https://tdm-vgbacklogmanager.herokuapp.com"
 
 } 
 

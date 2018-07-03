@@ -8,7 +8,8 @@ const WishlistTable = (props) => {
             <Col lg={{size: 6, offset: 1}}>
                 <div className="wishListHeader">
                     <h3>Wishlist</h3>
-                    <p> (because your backlog isn't long enough already)</p>
+                    <p> (because your backlog isn't long enough)</p>
+                    <Button id="newGame" onClick={props.newGame} color="primary" className="float-right">Add new game</Button>
                 </div>
                 <Table striped bordered>
                     <thead>
@@ -25,8 +26,8 @@ const WishlistTable = (props) => {
                             return (
                                 <tr key={id}>
                                     <th scope="row">
-                                        <Button id={wishlist.id}color="warning" size="sm">delete</Button>
-                                        <Button id={wishlist.id} color="success" size="sm">edit</Button>
+                                        <Button id={wishlist.id} onClick={props.delete} color="warning" size="sm">delete</Button>
+                                        <Button id={wishlist.id} onClick={e => props.update (e, wishlist)} color="success" size="sm">edit</Button>
                                     </th>
                                     <td>{wishlist.name}</td>
                                     <td>{wishlist.genre}</td>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Label, Input, Button, FormGroup, Container, Col, Row } from "reactstrap";
 import Signup from "./Signup";
+import "./Login.css";
 
 class Login extends Component {
     constructor(){
@@ -57,10 +58,12 @@ class Login extends Component {
                                     <Label for="password" hidden>enter password</Label>
                                     <Input type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange}/>
                                 </FormGroup>
-                                <Button type="submit">Submit</Button>
+                                <FormGroup className="logsignbuttons">
+                                    <Button type="submit">Login</Button>
+                                    <Button id="signB" onClick={this.modalToggle}>Signup</Button>
+                                    <Label for="signup">or if you don't have an account.</Label>
+                                </FormGroup>
                             </Form>
-                            <Label for="signup">Signup if you don't have an account.</Label>
-                            <Button onClick={this.modalToggle}>Signup</Button>
                         </Col>
                     </Row>
                     <Col md="12">

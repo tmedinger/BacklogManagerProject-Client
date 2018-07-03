@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class WishlistNew extends Component {
     constructor () {
@@ -21,7 +22,7 @@ class WishlistNew extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/blmanager/wishlist/create", {
+        fetch(`${APIURL}/blmanager/wishlist/create`, {
             method: "POST",
             body: JSON.stringify({ wishlistGame: this.state }),
             headers: new Headers({

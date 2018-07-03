@@ -7,6 +7,7 @@ import BacklogEdit from "./BacklogEdit";
 import WishlistEdit from "./WishlistEdit";
 import BacklogNew from "./BacklogNew";
 import WishlistNew from "./WishlistNew";
+import APIURL from "../helpers/environment";
 
 class Listspage extends Component {
     constructor() {
@@ -30,7 +31,7 @@ class Listspage extends Component {
     }
 
     fetchBacklog = () => {
-        fetch("http://localhost:3000/blmanager/backlog/getall", {
+        fetch(`${APIURL}/blmanager/backlog/getall`, {
             method: "GET",
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -44,7 +45,7 @@ class Listspage extends Component {
     }
 
     fetchWishlist = () => {
-        fetch("http://localhost:3000/blmanager/wishlist/getall", {
+        fetch(`${APIURL}/blmanager/wishlist/getall`, {
             method: "GET",
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -74,7 +75,7 @@ class Listspage extends Component {
     }
 
     backlogUpdate = (event, backlog) => {
-        fetch (`http://localhost:3000/blmanager/backlog/update/${backlog.id}`, {
+        fetch (`${APIURL}/blmanager/backlog/update/${backlog.id}`, {
             method: "PUT",
             body: JSON.stringify({ backlogGame: backlog }),
             headers: new Headers({
@@ -89,7 +90,7 @@ class Listspage extends Component {
     }
 
     wishlistUpdate = (event, wishlist) => {
-        fetch (`http://localhost:3000/blmanager/wishlist/update/${wishlist.id}`, {
+        fetch (`${APIURL}/blmanager/wishlist/update/${wishlist.id}`, {
             method: "PUT",
             body: JSON.stringify({ wishlistGame: wishlist }),
             headers: new Headers({
@@ -118,7 +119,7 @@ class Listspage extends Component {
     }
 
     backlogDelete = (event) => {
-        fetch (`http://localhost:3000/blmanager/backlog/delete/${event.target.id}`, {
+        fetch (`${APIURL}/blmanager/backlog/delete/${event.target.id}`, {
             method: "DELETE",
             body: JSON.stringify({ backlogGame: { id: event.target.id } }),
             headers: new Headers({
@@ -130,7 +131,7 @@ class Listspage extends Component {
     }
 
     wishlistDelete = (event) => {
-        fetch (`http://localhost:3000/blmanager/wishlist/delete/${event.target.id}`, {
+        fetch (`${APIURL}/blmanager/wishlist/delete/${event.target.id}`, {
             method: "DELETE",
             body: JSON.stringify({ wishlistGame: { id: event.target.id } }),
             headers: new Headers({

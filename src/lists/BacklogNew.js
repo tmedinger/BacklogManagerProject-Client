@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 class BacklogNew extends Component {
     constructor () {
@@ -30,7 +31,7 @@ class BacklogNew extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/blmanager/backlog/create", {
+        fetch(`${APIURL}/blmanager/backlog/create`, {
             method: "POST",
             body: JSON.stringify({ backlogGame: this.state }),
             headers: new Headers({

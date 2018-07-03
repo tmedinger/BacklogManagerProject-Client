@@ -21,7 +21,7 @@ const BacklogTable = (props) => {
                             <th>Platform</th>
                             <th>Interest</th>
                             <th>Started playing</th>
-                            <th>Length</th>
+                            <th>Length(hrs.)</th>
                             <th>Finished</th>
                         </tr>
                     </thead>
@@ -44,7 +44,7 @@ const BacklogTable = (props) => {
                         })}
                     </tbody>
                 </Table>
-                                <p id="lengthTotal" className="float-right">{ gameTotals }</p>
+                <p id="lengthTotal" className="float-right">Total length of backlog { gameTotals } hrs.</p>
             </Col>
         </div>
     )

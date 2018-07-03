@@ -76,7 +76,7 @@ class BacklogEdit extends Component {
                                 </Input>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="length">Length</Label>
+                                <Label for="length">Length(hrs.)</Label>
                                 <Input id="length" type="text" name="length" value={this.state.length} onChange={this.handleChange} />
                             </FormGroup>
                             <Button type="submit" color="primary">Submit</Button>

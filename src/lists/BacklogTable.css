@@ -1,3 +1,7 @@
 .backLogHeader h3, .backLogHeader p {
     display: inline;
 }
+
+#lengthTotal {
+    padding-right: 9em;
+}

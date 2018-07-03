@@ -10,7 +10,7 @@ class BacklogEdit extends Component {
             genre: "",
             platform: "",
             interest: 0,
-            startedPlaying: false,
+            startedPlaying: "no",
             length: 0
         };
     }
@@ -71,8 +71,8 @@ class BacklogEdit extends Component {
                             <FormGroup>
                                 <Label for="startedPlaying">Started Playing?</Label>
                                 <Input type="select" name="startedPlaying" id="startedPlaying" value={this.state.startedPlaying} onChange={this.handleChange}>
-                                    <option value="true">yes</option>
-                                    <option value="false">no</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </Input>
                             </FormGroup>
                             <FormGroup>

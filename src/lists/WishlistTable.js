@@ -5,7 +5,7 @@ import "./WishlistTable.css";
 const WishlistTable = (props) => {
     return (
         <div>
-            <Col lg={{size: 6, offset: 1}}>
+            <Col lg={{size: 6, offset: 4}}>
                 <div className="wishListHeader">
                     <h3>Wishlist</h3>
                     <p> (because your backlog isn't long enough)</p>

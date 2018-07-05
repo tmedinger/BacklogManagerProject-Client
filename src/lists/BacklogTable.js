@@ -6,7 +6,7 @@ const BacklogTable = (props) => {
     const gameTotals = props.backlog.map(game => Number(game.length)).reduce((prev, next) => prev + next, 0)
     return (
         <div>
-            <Col lg={{size: 10, offset: 1}}>
+            <Col lg={{size: 9, offset: 2}}>
                 <div className="backLogHeader">
                     <h3>Video Game Backlog</h3>
                     <p> (your shame)</p>
@@ -22,7 +22,7 @@ const BacklogTable = (props) => {
                             <th>Interest</th>
                             <th>Started playing</th>
                             <th>Length(hrs.)</th>
-                            <th>Finished</th>
+                            {/* <th>Finished</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +38,7 @@ const BacklogTable = (props) => {
                                     <td>{backlog.interest}</td>
                                     <td>{backlog.startedPlaying}</td>
                                     <td>{backlog.length}</td>
-                                    <td>{backlog.finished}</td>
+                                    {/* <td>{backlog.finished}</td> */}
                                 </tr>
                             )
                         })}

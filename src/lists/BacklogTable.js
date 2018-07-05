@@ -44,7 +44,7 @@ const BacklogTable = (props) => {
                         })}
                     </tbody>
                 </Table>
-                <p id="lengthTotal" className="float-right">Total length of backlog { gameTotals } hrs.</p>
+                <p id="lengthTotal" className="float-right">Total length of backlog: { gameTotals } hrs.</p>
             </Col>
         </div>
     )

@@ -1,6 +1,9 @@
 import React from "react";
 import { Table, Button, Col } from "reactstrap";
 import "./WishlistTable.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const WishlistTable = (props) => {
     return (
@@ -26,8 +29,8 @@ const WishlistTable = (props) => {
                             return (
                                 <tr key={id}>
                                     <th scope="row">
-                                        <Button id={wishlist.id} onClick={props.delete} color="warning" size="sm">delete</Button>
-                                        <Button id={wishlist.id} onClick={e => props.update (e, wishlist)} color="success" size="sm">edit</Button>
+                                        <FontAwesomeIcon className="icons" icon={faTrashAlt} id={wishlist.id} onClick={props.delete} style={{cursor:"pointer"}} />
+                                        <FontAwesomeIcon className="icons" icon={faEdit} id={wishlist.id} onClick={e => props.update(e, wishlist)} style={{cursor:"pointer"}} />
                                     </th>
                                     <td>{wishlist.name}</td>
                                     <td>{wishlist.genre}</td>

@@ -8,7 +8,6 @@ import WishlistEdit from "./WishlistEdit";
 import BacklogNew from "./BacklogNew";
 import WishlistNew from "./WishlistNew";
 import APIURL from "../helpers/environment";
-import igdb from "igdb-api-node";
 
 class Listspage extends Component {
     constructor() {

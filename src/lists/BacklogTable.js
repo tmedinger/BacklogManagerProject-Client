@@ -1,6 +1,9 @@
 import React from "react";
 import { Table, Button, Col } from "reactstrap";
 import "./BacklogTable.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const BacklogTable = (props) => {
     const gameTotals = props.backlog.map(game => Number(game.length)).reduce((prev, next) => prev + next, 0)
@@ -30,8 +33,9 @@ const BacklogTable = (props) => {
                             return (
                                 <tr key={id}>
                                     <th scope="row">
-                                        <Button id={backlog.id} onClick={props.delete} color="warning" size="sm">delete</Button>
-                                        <Button id={backlog.id} onClick={e => props.update(e, backlog)} color="success" size="sm" >edit</Button></th>
+                                        <FontAwesomeIcon className="icons" icon={faTrashAlt} id={backlog.id} onClick={props.delete} style={{cursor:"pointer"}} />
+                                        <FontAwesomeIcon className="icons" icon={faEdit} id={backlog.id} onClick={e => props.update(e, backlog)} style={{cursor:"pointer"}} /> 
+                                    </th>
                                     <td>{backlog.name}</td>
                                     <td>{backlog.genre}</td>
                                     <td>{backlog.platform}</td>

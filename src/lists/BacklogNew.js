@@ -12,7 +12,7 @@ class BacklogNew extends Component {
             genre: "",
             platform: "",
             interest: 0,
-            startedPlaying: "no",
+            startedPlaying: "No",
             length: 0
         };
     }
@@ -80,8 +80,8 @@ class BacklogNew extends Component {
                             <FormGroup>
                                 <Label for="startedPlaying">Started Playing?</Label>
                                 <Input type="select" name="startedPlaying" id="startedPlaying" value={this.state.startedPlaying} onChange={this.handleChange}>
-                                    <option value="Yes">Yes</option>
                                     <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
                                 </Input>
                             </FormGroup>
                             <FormGroup>

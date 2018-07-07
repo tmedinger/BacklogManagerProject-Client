@@ -25,6 +25,18 @@ class Listspage extends Component {
         };
     }
 
+    sortBacklog = (event, sortColumn) => {
+        const backlog = this.state.backlog
+        backlog.sort((a, b) => a[sortColumn].toString().localeCompare(b[sortColumn]))
+        this.setState(backlog)
+    }
+
+    sortWishlist = (event, sortColumn) => {
+        const wishlist = this.state.wishlist
+        wishlist.sort((a, b) => a[sortColumn].toString().localeCompare(b[sortColumn]))
+        this.setState(wishlist)
+    }
+
     componentDidMount() {
         this.fetchBacklog()
         this.fetchWishlist()
@@ -165,14 +177,14 @@ class Listspage extends Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="10">
-                                <BacklogTable newGame={this.addNewBLogToggle} backlog={this.state.backlog} update={this.setBacklogUpdate} delete={this.backlogDelete}></BacklogTable>
+                                <BacklogTable newGame={this.addNewBLogToggle} backlog={this.state.backlog} update={this.setBacklogUpdate} delete={this.backlogDelete} sort={this.sortBacklog} sortNum={this.sortBacklogNum}></BacklogTable>
                             </Col>
                         </Row>
                     </TabPane>
                     <TabPane tabId="2">
                         <Row>
                             <Col sm="10">
-                                <WishlistTable newGame={this.addNewWListToggle} wishlist={this.state.wishlist} update={this.setWishlistUpdate} delete={this.wishlistDelete}></WishlistTable>
+                                <WishlistTable newGame={this.addNewWListToggle} wishlist={this.state.wishlist} update={this.setWishlistUpdate} delete={this.wishlistDelete} sort={this.sortWishlist}></WishlistTable>
                             </Col>
                         </Row>
                     </TabPane>

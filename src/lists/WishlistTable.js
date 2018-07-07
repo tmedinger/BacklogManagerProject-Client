@@ -18,10 +18,10 @@ const WishlistTable = (props) => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Genre</th>
-                            <th>Platform</th>
-                            <th>Interest</th>
+                            <th onClick={e => props.sort(e, "name")}style={{cursor:"pointer"}} >Name</th>
+                            <th onClick={e => props.sort(e, "genre")}style={{cursor:"pointer"}} >Genre</th>
+                            <th onClick={e => props.sort(e, "platform")}style={{cursor:"pointer"}}>Platform</th>
+                            <th onClick={e => props.sort(e, "interest")}style={{cursor:"pointer"}}>Interest</th>
                         </tr>
                     </thead>
                     <tbody>

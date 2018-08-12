@@ -27,13 +27,19 @@ class Listspage extends Component {
 
     sortBacklog = (event, sortColumn) => {
         const backlog = this.state.backlog
+        backlog.sort((a, b) => a[sortColumn].localeCompare(b[sortColumn]))
+        this.setState(backlog)
+    }
+
+    sortBacklogNum = (event, sortColumn) => {
+        const backlog = this.state.backlog
         backlog.sort((a, b) => a[sortColumn].toString().localeCompare(b[sortColumn]))
         this.setState(backlog)
     }
 
     sortWishlist = (event, sortColumn) => {
         const wishlist = this.state.wishlist
-        wishlist.sort((a, b) => a[sortColumn].toString().localeCompare(b[sortColumn]))
+        wishlist.sort((a, b) => a[sortColumn].localeCompare(b[sortColumn]))
         this.setState(wishlist)
     }
 

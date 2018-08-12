@@ -6,8 +6,8 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 class BacklogTable extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             entriesToDelete: [],
             entryToUpdate: 0,

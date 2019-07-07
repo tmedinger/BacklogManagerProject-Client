@@ -10,7 +10,7 @@ class SiteBar extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({ username: this.props.userName })
     }
 

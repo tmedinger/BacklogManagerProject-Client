@@ -131,9 +131,9 @@ class Listspage extends Component {
     }
 
     backlogDelete = (event) => {
-        fetch (`${APIURL}/blmanager/backlog/delete/${event.target.id}`, {
+        fetch (`${APIURL}/blmanager/backlog/delete/${event.currentTarget.id}`, {
             method: "DELETE",
-            body: JSON.stringify({ backlogGame: { id: event.target.id } }),
+            body: JSON.stringify({ backlogGame: { id: event.currentTarget.id } }),
             headers: new Headers({
                 "Content-Type": "application/json",
                 "Authorization": this.props.token
@@ -143,9 +143,9 @@ class Listspage extends Component {
     }
 
     wishlistDelete = (event) => {
-        fetch (`${APIURL}/blmanager/wishlist/delete/${event.target.id}`, {
+        fetch (`${APIURL}/blmanager/wishlist/delete/${event.currentTarget.id}`, {
             method: "DELETE",
-            body: JSON.stringify({ wishlistGame: { id: event.target.id } }),
+            body: JSON.stringify({ wishlistGame: { id: event.currentTarget.id } }),
             headers: new Headers({
                 "Content-Type": "application/json",
                 "Authorization": this.props.token

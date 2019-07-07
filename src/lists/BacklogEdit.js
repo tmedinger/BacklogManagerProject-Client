@@ -15,7 +15,7 @@ class BacklogEdit extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             id: this.props.backlog.id,
             name: this.props.backlog.name,

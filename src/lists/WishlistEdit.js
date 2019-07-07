@@ -13,7 +13,7 @@ class WishlistEdit extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             id: this.props.wishlist.id,
             name: this.props.wishlist.name,
